@@ -11,7 +11,6 @@ for(var i = 0; i < pacientes.length; i++){
     var tdPeso = paciente.querySelector('.info-peso');
     var peso = tdPeso.textContent;
 
-    //var alturaDireto = ((paciente.querySelector('.info-altura')).textContent);
     var tdAltura = paciente.querySelector('.info-altura');
     var altura = tdAltura.textContent;
 
@@ -32,14 +31,18 @@ for(var i = 0; i < pacientes.length; i++){
         alturaValida = false;
         tdImc.textContent = "Altura Inválida!";
         paciente.classList.add("paciente-invalido");
-        //paciente.style.backgroundColor = "orange";
     }
     if(pesoValido && alturaValida){
-        var imc = peso / (altura * altura);
-         tdImc.textContent = imc.toFixed(2);
+        var imc = calcumaImc(peso, altura);
+         tdImc.textContent = imc;
          
     }
 
 }
 
+function calcumaImc(peso, altura){
+    var imc = 0;
+    imc = peso / (altura * altura);
 
+    return imc.toFixed(2);
+}
