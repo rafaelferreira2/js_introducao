@@ -1,3 +1,4 @@
+
 var botaoAdiciona = document.querySelector("#adicionar-paciente");
 botaoAdiciona.addEventListener("click", function(event){
     event.preventDefault();
@@ -79,16 +80,22 @@ function validaPaciente(paciente) {
         erros.push ("O NOME não pode ser em branco!");
     }
 
-    if(!validaPeso(paciente.peso)) erros.push("Peso é Inválido!");
-
-    if (paciente.peso.length == 0){
-        erros.push("O PESO não pode ser em branco!");
+    if(!validaPeso(paciente.peso)){
+         erros.push("Peso é Inválido!");
     }
-    
+
     if(!validaAltura(paciente.altura)){
         erros.push("ALTURA é Inválida!");
     } 
 
+    if(!validaGordura(paciente.gordura)){
+        erros.push("% de GORDURA Inválida!");
+    }
+
+    if (paciente.peso.length == 0){
+        erros.push("O PESO não pode ser em branco!");
+    }
+   
     if (paciente.altura.length == 0){
         erros.push("A ALTURA não pode ser em branco!");
     }

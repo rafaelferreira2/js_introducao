@@ -53,6 +53,13 @@ function validaAltura (altura){
         return false;
     }
 }
+function validaGordura (gordura){
+    if(gordura >=0 && gordura < 50){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function calcumaImc(peso, altura){
     var imc = 0;
